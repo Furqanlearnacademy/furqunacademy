@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { resend, RESEND_FROM, NOTIFICATION_RECIPIENT } from "@/lib/resend";
+import { resend, RESEND_FROM, NOTIFICATION_RECIPIENT, isResendConfigured } from "@/lib/resend";
 import {
   ContactInquiryEmailData,
   generateContactEmailHtml,
   generateContactEmailText,
 } from "@/lib/email-templates";
+
+export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   try {
@@ -28,6 +30,15 @@ export async function POST(req: NextRequest) {
       message: message.trim(),
       source: source || "Contact Us Page",
     };
+
+    // If Resend API key is not yet configured, gracefully acknowledge without error
+    if (!isResendConfigured) {
+      console.warn("⚠️ RESEND_API_KEY not configured. Contact submission received:", emailData);
+      return NextResponse.json({
+        success: true,
+        message: "Message received successfully! We will contact you soon.",
+      });
+    }
 
     const emailSubject = `📬 [Contact Inquiry] ${emailData.name} — ${emailData.subject}`;
 
