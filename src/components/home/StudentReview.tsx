@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
 import {
   IslamicCalligraphyQuoteIcon,
@@ -11,6 +12,8 @@ import { IslamicRosetteAccentIcon } from "@/components/ui/SemanticCustomIcons";
 
 export const StudentReview: React.FC = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(cardRef, { margin: "150px 0px 150px 0px" });
 
   const reviews = [
     {
@@ -59,13 +62,14 @@ export const StudentReview: React.FC = () => {
     },
   ];
 
-  // Autoplay slider interval (4.5 seconds)
+  // Autoplay slider interval (4.5 seconds) - only runs when visible in viewport
   useEffect(() => {
+    if (!isInView) return;
     const timer = setInterval(() => {
       setCurrentIdx((prev) => (prev + 1) % reviews.length);
     }, 4500);
     return () => clearInterval(timer);
-  }, [reviews.length]);
+  }, [isInView, reviews.length]);
 
   const current = reviews[currentIdx];
 
@@ -73,7 +77,7 @@ export const StudentReview: React.FC = () => {
   const handlePrev = () => setCurrentIdx((prev) => (prev - 1 + reviews.length) % reviews.length);
 
   return (
-    <div className="bg-gradient-to-b from-[#082922] via-[#051C17] to-[#031410] backdrop-blur-xl rounded-3xl p-4 sm:p-5 py-5 border border-gold-primary/45 shadow-[0_12px_36px_rgba(0,0,0,0.4)] relative flex flex-col justify-between overflow-hidden text-white h-full group hover:border-gold-primary/70 transition-all duration-300">
+    <div ref={cardRef} className="bg-gradient-to-b from-[#082922] via-[#051C17] to-[#031410] backdrop-blur-xl rounded-3xl p-4 sm:p-5 py-5 border border-gold-primary/45 shadow-[0_12px_36px_rgba(0,0,0,0.4)] relative flex flex-col justify-between overflow-hidden text-white h-full group hover:border-gold-primary/70 transition-all duration-300">
       {/* Top Ambient Gold Bar */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-primary to-transparent pointer-events-none" />
 

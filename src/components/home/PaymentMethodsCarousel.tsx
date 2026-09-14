@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
 import {
   ShieldCheck,
   Lock,
@@ -343,6 +344,9 @@ const GLOBAL_PAYMENT_METHODS: GlobalPaymentMethodItem[] = [
 const MARQUEE_ITEMS = [...GLOBAL_PAYMENT_METHODS, ...GLOBAL_PAYMENT_METHODS];
 
 export const PaymentMethodsCarousel: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { margin: "250px 0px 250px 0px" });
+
   return (
     <div className="w-full pt-8 sm:pt-10 space-y-6 sm:space-y-7">
       
@@ -377,10 +381,15 @@ export const PaymentMethodsCarousel: React.FC = () => {
         </div>
       </div>
 
-      {/* CONTINUOUS SMOOTH MARQUEE CAROUSEL CONTAINER */}
-      <div className="relative w-full overflow-hidden py-3">
+      {/* CONTINUOUS SMOOTH MARQUEE CAROUSEL CONTAINER (Auto-pauses when offscreen to save GPU) */}
+      <div ref={containerRef} className="relative w-full overflow-hidden py-3">
         {/* INFINITE SCROLLING ROW */}
-        <div className="animate-marquee-infinite flex items-center gap-4 sm:gap-5 cursor-grab active:cursor-grabbing">
+        <div
+          className="animate-marquee-infinite flex items-center gap-4 sm:gap-5 cursor-grab active:cursor-grabbing"
+          style={{
+            animationPlayState: isInView ? "running" : "paused",
+          }}
+        >
           {MARQUEE_ITEMS.map((method, index) => {
             const Icon = method.icon;
             return (
