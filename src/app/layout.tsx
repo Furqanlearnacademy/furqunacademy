@@ -80,10 +80,10 @@ export const metadata: Metadata = {
       "Modern Islamic learning, rooted in tradition. 1-on-1 Quran, Arabic, and Islamic Studies with Al-Azhar certified tutors and AI Tajweed Coach.",
     images: [
       {
-        url: "/images/furqan-logo.webp",
+        url: "https://furqanlearn.com/images/og-furqan.png",
         width: 1200,
         height: 630,
-        alt: "Furqan Learn Academy Online Quran & Arabic Classes",
+        alt: "Furqan Learn Academy — Online Quran & Arabic Classes",
       },
     ],
   },
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     title: "Furqan Learn Academy | Learn Quran with Clarity",
     description:
       "Modern Islamic learning, rooted in tradition. 1-on-1 Quran, Arabic, and Islamic Studies with Al-Azhar certified tutors.",
-    images: ["/images/furqan-logo.webp"],
+    images: ["https://furqanlearn.com/images/og-furqan.png"],
   },
   icons: {
     icon: [
