@@ -97,10 +97,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/images/furqan-logo-transparent.webp", sizes: "192x192", type: "image/webp" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [
-      { url: "/images/furqan-logo-transparent.webp", sizes: "180x180", type: "image/webp" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
 };
