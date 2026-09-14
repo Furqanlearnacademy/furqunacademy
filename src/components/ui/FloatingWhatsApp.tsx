@@ -9,7 +9,7 @@ export const FloatingWhatsApp: React.FC = () => {
   const [dismissedTooltip, setDismissedTooltip] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
-  const phoneNumber = "201204856389";
+  const phoneNumber = "201063204740";
   const defaultMessage = encodeURIComponent(
     "Assalamu Alaikum! I would like to inquire about Furqan Learn Academy classes and free evaluation trial."
   );

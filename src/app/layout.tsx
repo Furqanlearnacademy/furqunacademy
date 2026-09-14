@@ -122,6 +122,7 @@ const jsonLd = {
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+201063204740",
+    "email": "furqanlearnacademy@gmail.com",
     "contactType": "customer service",
     "availableLanguage": ["English", "Arabic"]
   }

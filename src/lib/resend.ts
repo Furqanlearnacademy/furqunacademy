@@ -17,4 +17,4 @@ export const isResendConfigured = Boolean(
 export const RESEND_FROM =
   process.env.RESEND_FROM_EMAIL || "Furqan Learn Academy <notifications@furqanlearn.com>";
 export const NOTIFICATION_RECIPIENT =
-  process.env.CONTACT_NOTIFICATION_EMAIL || "contact@furqanlearn.com";
+  process.env.CONTACT_NOTIFICATION_EMAIL || "furqanlearnacademy@gmail.com";

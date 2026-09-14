@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-2.5 pt-2">
               {/* WhatsApp */}
               <a
-                href="https://wa.me/201204856389"
+                href="https://wa.me/201063204740"
                 target="_blank"
                 rel="noreferrer"
                 className="w-8 h-8 rounded-lg bg-navy-royal/60 border border-gold-primary/30 text-gold-light hover:text-[#25D366] hover:border-[#25D366] flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -122,22 +122,22 @@ export const Footer: React.FC = () => {
             <div className="space-y-2.5 text-xs text-gray-300">
               <div>
                 <a
-                  href="mailto:contact@furqanlearn.com"
+                  href="mailto:furqanlearnacademy@gmail.com"
                   className="inline-flex items-center gap-2 hover:text-gold-light transition-colors group cursor-pointer"
                   title="Email Academic Support"
                 >
                   <Mail className="w-3.5 h-3.5 text-gold-primary group-hover:scale-110 transition-transform shrink-0" />
-                  <span>support@furqanlearn.com</span>
+                  <span>furqanlearnacademy@gmail.com</span>
                 </a>
               </div>
               <div>
                 <a
-                  href="tel:+201204856389"
+                  href="tel:+201063204740"
                   className="inline-flex items-center gap-2 hover:text-gold-light transition-colors group cursor-pointer"
                   title="Call Academic Hotline"
                 >
                   <Phone className="w-3.5 h-3.5 text-gold-primary group-hover:scale-110 transition-transform shrink-0" />
-                  <span dir="ltr">+20 120 485 6389</span>
+                  <span dir="ltr">+20 106 320 4740</span>
                 </a>
               </div>
               <div className="flex items-center gap-2 text-gray-400">

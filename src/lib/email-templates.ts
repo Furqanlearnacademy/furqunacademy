@@ -185,7 +185,7 @@ export function generateTrialEmailHtml(data: TrialBookingEmailData): string {
                       💬 Open Direct WhatsApp Chat
                     </a>
                     ` : ""}
-                    <a href="mailto:${data.email}?subject=Your%20Ruh%20Al-Quran%20Free%20Trial%20Class%20Confirmation" style="display:inline-block;background-color:#08332B;color:#E8D18C;padding:14px 24px;border-radius:30px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 15px rgba(11,27,51,0.25);margin:4px;border:1px solid #C9A24D;">
+                    <a href="mailto:${data.email}?subject=Your%20Furqan%20Learn%20Academy%20Free%20Trial%20Class%20Confirmation" style="display:inline-block;background-color:#08332B;color:#E8D18C;padding:14px 24px;border-radius:30px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 15px rgba(11,27,51,0.25);margin:4px;border:1px solid #C9A24D;">
                       ✉️ Reply via Email
                     </a>
                   </td>
@@ -366,7 +366,7 @@ export function generateContactEmailHtml(data: ContactInquiryEmailData): string 
                       💬 Chat on WhatsApp
                     </a>
                     ` : ""}
-                    <a href="mailto:${data.email}?subject=Re:%20${encodeURIComponent(data.subject)}%20-%20Ruh%20Al-Quran" style="display:inline-block;background-color:#08332B;color:#E8D18C;padding:12px 24px;border-radius:30px;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 4px 15px rgba(11,27,51,0.25);margin:4px;border:1px solid #C9A24D;">
+                    <a href="mailto:${data.email}?subject=Re:%20${encodeURIComponent(data.subject)}%20-%20Furqan%20Learn%20Academy" style="display:inline-block;background-color:#08332B;color:#E8D18C;padding:12px 24px;border-radius:30px;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 4px 15px rgba(11,27,51,0.25);margin:4px;border:1px solid #C9A24D;">
                       ✉️ Reply to ${data.name}
                     </a>
                   </td>
@@ -383,7 +383,7 @@ export function generateContactEmailHtml(data: ContactInquiryEmailData): string 
                 Furqan Learn Academy — Al-Azhar Academic Support
               </p>
               <p style="margin:4px 0 0;color:#A0AEC0;font-size:11px;">
-                Cairo, Egypt • support@furqanlearn.com
+                Cairo, Egypt • furqanlearnacademy@gmail.com
               </p>
             </td>
           </tr>
