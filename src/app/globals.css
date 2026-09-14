@@ -1,0 +1,1521 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Color Tokens (100% Matching Official Furqan Learn Brand Identity System) */
+  --color-emerald: #0E493E;
+  /* Master Brand Primary */
+  --color-emerald-deep: #08332B;
+  /* Deep Forest Backgrounds */
+  --color-emerald-royal: #145A4D;
+  /* Accent Radiant Emerald */
+  --color-emerald-tint: #E7EFEB;
+  /* Light Surface Emerald Tint */
+
+  --color-graphite: #18242B;
+  /* Brand Graphite Text & Headers */
+  --color-graphite-secondary: #2D3B43;
+  /* Primary Long-form Body Text */
+  --color-graphite-muted: #57656E;
+  /* Muted WCAG AA Compliant Text */
+
+  --color-gold-bright: #FFF2C8;
+  /* Brilliant Specular Gold Highlight */
+  --color-gold-primary: #D4AF37;
+  /* Master Imperial 24K Royal Gold */
+  --color-gold-light: #F9E8B2;
+  /* Light Radiant Tint Gold */
+  --color-gold-dark: #AA7A1E;
+  /* Contrast Burnished Gold */
+  --color-gold-burnished: #8C6214;
+  /* Deep Antique Royal Gold */
+  --color-champagne: #F2E3B8;
+  --color-gold-tint: #FAF5E6;
+  /* Soft Gold Alabaster Surface */
+
+  --color-bg-main: #F9F7F1;
+  /* Warm Alabaster Parchment Background */
+  --color-porcelain: #FFFFFF;
+  /* Crisp White Card Surface */
+  --color-platinum: #EBE6D9;
+
+  /* Aliases mapped seamlessly to brand palette so all platform components transition cleanly */
+  --color-navy-primary: var(--color-emerald);
+  --color-navy-deep: var(--color-emerald-deep);
+  --color-navy-royal: var(--color-emerald-royal);
+  --color-soft-green: var(--color-emerald-tint);
+  --color-warm-rose: #E07C7C;
+  --color-lavender: #8E8FD1;
+
+  /* Centralized Typography Scale (Fluid across 360px -> 1440px) */
+  --font-serif: var(--font-serif), 'Playfair Display', Georgia, serif;
+  --font-sans: var(--font-sans), 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-arabic: var(--font-arabic), 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --font-quran: var(--font-quran), 'Noto Naskh Arabic', serif;
+
+  --fs-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+  --fs-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+  --fs-base: clamp(1rem, 0.95rem + 0.35vw, 1.125rem);
+  --fs-lg: clamp(1.125rem, 1.05rem + 0.45vw, 1.25rem);
+  --fs-xl: clamp(1.25rem, 1.15rem + 0.65vw, 1.5rem);
+  --fs-2xl: clamp(1.5rem, 1.35rem + 0.9vw, 1.875rem);
+  --fs-3xl: clamp(1.875rem, 1.6rem + 1.3vw, 2.5rem);
+  --fs-4xl: clamp(2.25rem, 1.9rem + 1.8vw, 3.25rem);
+  --fs-5xl: clamp(2.75rem, 2.2rem + 2.6vw, 4.25rem);
+
+  /* Centralized Global Page & Section Layout Tokens */
+  --page-px: clamp(0.75rem, 3vw, 3.5rem);
+  --hero-py: clamp(0.25rem, 1vw, 1.25rem);
+  --hero-grid-gap: clamp(0.6rem, 1.2vw, 1.25rem);
+  --hero-card-p: clamp(0.85rem, 2vw, 2.5rem);
+  --hero-card-gap: clamp(0.5rem, 1vw, 1.25rem);
+
+  /* Centralized Fluid Typography Tokens */
+  --hero-title-size: clamp(1.75rem, 3.2vw + 0.4rem, 3.75rem);
+  --hero-subtitle-size: clamp(0.75rem, 0.95vw, 1rem);
+  --hero-subtitle-max-w: clamp(320px, 25vw, 420px);
+  --hero-btn-font-size: clamp(0.75rem, 0.95vw, 1rem);
+
+  /* Centralized 3D Carousel & Image Dimensions */
+  --hero-3d-stack-w: clamp(190px, 15vw, 240px);
+  --hero-3d-stack-h: clamp(235px, 18.5vw, 295px);
+  --hero-quran-max-w: clamp(210px, 18.5vw, 320px);
+  --hero-quran-max-h: clamp(200px, 17.5vw, 305px);
+
+  /* Centralized Right Sidebar & Card Tokens */
+  --sidebar-w-lg: 260px;
+  --sidebar-w-xl: 280px;
+  --sidebar-w-2xl: 290px;
+  --sidebar-card-p: clamp(0.65rem, 1vw, 0.9rem);
+  --sidebar-gap: clamp(0.5rem, 0.8vw, 0.75rem);
+
+  /* Centralized StatsBar Tokens */
+  --stats-container-p: clamp(0.85rem, 1.5vw, 1.25rem);
+  --stats-icon-size: clamp(2.75rem, 3vw, 3rem);
+  --stats-number-size: clamp(1.4rem, 2.2vw, 1.875rem);
+  --stats-label-size: clamp(0.75rem, 0.95vw, 0.875rem);
+
+  /* Centralized Courses Page Design Tokens */
+  --courses-hero-py: clamp(1.5rem, 3.5vw, 3.25rem);
+  --courses-hero-max-w: 1240px;
+  --courses-filter-gap: clamp(0.75rem, 1.2vw, 1.25rem);
+  --courses-grid-gap: clamp(1.1rem, 1.8vw, 1.85rem);
+  --course-card-p: clamp(1rem, 1.4vw, 1.35rem);
+  --course-card-img-h: clamp(190px, 15vw, 220px);
+  --course-card-radius: 20px;
+  --courses-section-py: clamp(2rem, 4vw, 4.5rem);
+  --roadmap-step-gap: clamp(1rem, 1.5vw, 1.75rem);
+
+  /* Exact Brand Radius Tokens: Controls 12px, Cards 20px */
+  --radius-control: 12px;
+  --radius-card: 20px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Shadow & Glow Tokens */
+  --shadow-neu-flat: 8px 8px 20px rgba(14, 73, 62, 0.06), -8px -8px 20px rgba(255, 255, 255, 0.95);
+  --shadow-neu-pressed: inset 3px 3px 8px rgba(14, 73, 62, 0.10), inset -3px -3px 8px rgba(255, 255, 255, 0.9);
+  --shadow-gold-glow: 0px 10px 25px rgba(234, 217, 163, 0.40);
+  --shadow-emerald-glow: 0px 12px 30px rgba(14, 73, 62, 0.28);
+  --shadow-navy-glow: 0px 12px 30px rgba(14, 73, 62, 0.28);
+}
+
+/* 📱 Responsive Overrides for Small Mobile Screens (360px - 480px) */
+@media (max-width: 480px) {
+  :root {
+    --hero-title-size: clamp(1.4rem, 6.8vw, 1.85rem);
+    --hero-subtitle-size: 0.8rem;
+    --hero-card-p: 1.1rem;
+    --hero-card-gap: 0.6rem;
+    --page-px: 0.75rem;
+    --courses-grid-gap: 1rem;
+    --courses-filter-gap: 0.5rem;
+    --course-card-p: 0.95rem;
+    --course-card-img-h: 175px;
+    --sidebar-card-p: 0.65rem;
+    --sidebar-gap: 0.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --hero-title-size: clamp(1.25rem, 6.2vw, 1.55rem);
+    --hero-subtitle-size: 0.75rem;
+    --hero-card-p: 0.9rem;
+    --hero-card-gap: 0.5rem;
+    --page-px: 0.5rem;
+    --sidebar-card-p: 0.55rem;
+    --sidebar-gap: 0.4rem;
+  }
+}
+
+/* 💻 Responsive Scaling for Laptops & Mid Screens (1024px - 1536px) */
+@media (min-width: 1024px) and (max-width: 1536px) {
+  :root {
+    --hero-3d-stack-w: clamp(180px, 13.5vw, 215px);
+    --hero-3d-stack-h: clamp(220px, 16.5vw, 265px);
+    --hero-quran-max-w: clamp(190px, 15vw, 260px);
+    --hero-quran-max-h: clamp(180px, 14.5vw, 250px);
+    --sidebar-w-lg: 240px;
+    --sidebar-w-xl: 260px;
+  }
+}
+
+@theme {
+  --color-emerald: var(--color-emerald);
+  --color-emerald-deep: var(--color-emerald-deep);
+  --color-emerald-royal: var(--color-emerald-royal);
+  --color-emerald-tint: var(--color-emerald-tint);
+  --color-graphite: var(--color-graphite);
+  --color-graphite-secondary: var(--color-graphite-secondary);
+  --color-graphite-muted: var(--color-graphite-muted);
+  --color-gold-bright: var(--color-gold-bright);
+  --color-gold-primary: var(--color-gold-primary);
+  --color-gold-light: var(--color-gold-light);
+  --color-gold-dark: var(--color-gold-dark);
+  --color-gold-burnished: var(--color-gold-burnished);
+  --color-gold-tint: var(--color-gold-tint);
+  --color-bg-main: var(--color-bg-main);
+  --color-porcelain: var(--color-porcelain);
+  --color-champagne: var(--color-champagne);
+  --color-platinum: var(--color-platinum);
+
+  --color-navy-primary: var(--color-navy-primary);
+  --color-navy-deep: var(--color-navy-deep);
+  --color-navy-royal: var(--color-navy-royal);
+  --color-soft-green: var(--color-soft-green);
+  --color-warm-rose: var(--color-warm-rose);
+  --color-lavender: var(--color-lavender);
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-arabic: var(--font-arabic);
+  --font-quran: var(--font-quran);
+}
+
+/* ==========================================================================
+   Royal Islamic Luxury Utility Classes (Ultra-Premium Master Styling)
+   ========================================================================== */
+
+/* 24K Royal Gilded Foil Text */
+.gold-foil-text {
+  background: linear-gradient(135deg, #FFF6D6 0%, #F5CE58 35%, #D4AF37 65%, #9E711A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Master Tactile Royal Sculpted Engraving (High-Definition 3D Chiseled Letterpress)
+   ========================================================================== */
+
+/* Deep Sculpted Royal Emerald Engraved Text (Prismatic V-Cut Chisel with Luminous Facet & Sharp Relief) */
+.engraved-emerald {
+  display: inline-block;
+  background: linear-gradient(180deg,
+      #021812 0%,
+      #073E32 28%,
+      #10705D 47%,
+      #032119 53%,
+      #0A4D3E 78%,
+      #041D16 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter:
+    drop-shadow(0px -1px 0px rgba(1, 15, 12, 0.95)) drop-shadow(0px 1.5px 0px #FFFFFF) drop-shadow(1px 2px 2px rgba(4, 30, 24, 0.35));
+}
+
+/* Deep Sculpted Imperial 24K Radiant Gold (Authentic Pure Gold Foil - Zero Brown, Zero Mud) */
+.engraved-gold {
+  display: inline-block;
+  background: linear-gradient(180deg, 
+    #B58724 0%, 
+    #D9A936 24%, 
+    #f9c710 47%, 
+    #D4AF37 53%, 
+    #E8BF4C 76%, 
+    #A6781D 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: 
+    drop-shadow(0px -1px 0px rgba(140, 95, 15, 0.8))
+    drop-shadow(0px 1.5px 0px #FFFFFF)
+    drop-shadow(1px 2px 2px rgba(150, 105, 20, 0.25));
+}
+
+/* Deep Sculpted Metric Counter Numbers (Crisp Chiseled Stone Relief) */
+.engraved-number {
+  display: inline-block;
+  background: linear-gradient(180deg, 
+    #03221B 0%, 
+    #074437 26%, 
+    #0E6653 47%, 
+    #053027 53%, 
+    #0A5746 76%, 
+    #032019 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: 
+    drop-shadow(0px -1px 0px rgba(1, 18, 14, 0.95))
+    drop-shadow(0px 1.5px 0px #FFFFFF)
+    drop-shadow(1px 2px 1.5px rgba(3, 35, 28, 0.25));
+}
+
+/* Deep Sculpted Metric Radiant Gold Suffix */
+.engraved-suffix {
+  display: inline-block;
+  background: linear-gradient(180deg, 
+    #B58724 0%, 
+    #D9A936 24%, 
+    #FDE48B 47%, 
+    #D4AF37 53%, 
+    #E8BF4C 76%, 
+    #A6781D 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: 
+    drop-shadow(0px -1px 0px rgba(140, 95, 15, 0.8))
+    drop-shadow(0px 1.5px 0px #FFFFFF)
+    drop-shadow(1px 2px 1.5px rgba(150, 105, 20, 0.25));
+}
+
+/* 24K Royal Gold Button with Specular Light Sweep */
+.btn-royal-gold {
+  position: relative;
+  background: linear-gradient(135deg, #FDE68A 0%, #E5BE50 30%, #D4AF37 60%, #AA7A1E 100%);
+  color: #07261F !important;
+  font-weight: 800;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.40), inset 0 1px 1px rgba(255, 255, 255, 0.7), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid #FFEAA7;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.btn-royal-gold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+}
+
+.btn-royal-gold:hover::before {
+  left: 140%;
+}
+
+.btn-royal-gold:hover {
+  background: linear-gradient(135deg, #FFF2B2 0%, #ECC557 30%, #DFB944 60%, #BA891B 100%);
+  box-shadow: 0 8px 28px rgba(212, 175, 55, 0.55), inset 0 1px 1.5px rgba(255, 255, 255, 0.85);
+  transform: translateY(-1.5px);
+}
+
+.btn-royal-gold:active {
+  transform: translateY(0.5px);
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.35);
+}
+
+/* Royal Emerald Glass Card (Dark Master) */
+.royal-card-dark {
+  position: relative;
+  background: linear-gradient(180deg, rgba(14, 73, 62, 0.94) 0%, rgba(7, 43, 36, 0.97) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 14px 35px -5px rgba(5, 25, 20, 0.48), inset 0 1px 0 rgba(255, 243, 209, 0.3);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.royal-card-dark:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 20px 45px -5px rgba(5, 25, 20, 0.58), 0 0 25px rgba(212, 175, 55, 0.2), inset 0 1px 0 rgba(255, 243, 209, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Royal Alabaster Glass Card (Light Master) */
+.royal-card-light {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 248, 241, 0.92) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.30);
+  box-shadow: 0 10px 30px rgba(14, 73, 62, 0.07), 0 1px 3px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.royal-card-light:hover {
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 16px 42px rgba(14, 73, 62, 0.12), 0 0 20px rgba(212, 175, 55, 0.18);
+  transform: translateY(-2px);
+}
+
+/* Specular Gold Rim Highlight on Top of Cards (Safe Pseudo-Element) */
+.specular-rim-gold {
+  position: relative;
+}
+
+.specular-rim-gold::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 242, 200, 0.9) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Support standalone empty div for backward compatibility */
+div.specular-rim-gold:empty {
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 242, 200, 0.9) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+body {
+  background-color: var(--color-bg-main);
+  color: var(--color-graphite);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Authentic Royal Islamic Geometric Watermark */
+.islamic-royal-watermark {
+  background-image: url("/images/backgrounds/royal-islamic-pattern.svg");
+  background-repeat: repeat;
+  background-size: 100px 100px;
+}
+
+/* Authentic Archival Manuscript Parchment Grain */
+.royal-parchment-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.12  0 0 0 0 0.09  0 0 0 0 0.04  0 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Authentic Porous Paper Texture Class */
+.paper-porous-texture {
+  background-color: #EFEBE2;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperTextureFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.12   0 0 0 0 0.09   0 0 0 0 0.04  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperTextureFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Authentic Dark Porous Paper & Parchment Texture for Dark Navy Sections */
+.dark-paper-porous-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='darkPaperTextureFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.95   0 0 0 0 0.88   0 0 0 0 0.65  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23darkPaperTextureFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Custom Hybrid Neumorphic & Glassmorphic Utilities */
+.neu-card {
+  background: var(--color-porcelain);
+  box-shadow: 12px 12px 28px rgba(7, 22, 46, 0.06), -10px -10px 24px rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(232, 216, 181, 0.4);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neu-card:hover {
+  box-shadow: 16px 16px 36px rgba(7, 22, 46, 0.09), -12px -12px 28px rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+.neu-inset {
+  background: #EFEBE2;
+  box-shadow: inset 4px 4px 10px rgba(7, 22, 46, 0.07), inset -4px -4px 10px rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-md);
+}
+
+.neu-btn-gold {
+  background: linear-gradient(135deg, #C7A04B 0%, #D4AF37 100%);
+  color: #ffffff;
+  box-shadow: 0px 8px 20px rgba(199, 160, 75, 0.35), inset 0px 1px 0px rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-full);
+  transition: all 0.25s ease;
+}
+
+.neu-btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 12px 25px rgba(199, 160, 75, 0.45);
+}
+
+.neu-btn-navy {
+  background: linear-gradient(135deg, var(--color-navy-primary) 0%, var(--color-navy-deep) 100%);
+  color: #ffffff;
+  box-shadow: 0px 8px 20px rgba(15, 38, 78, 0.25), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  transition: all 0.25s ease;
+}
+
+.neu-btn-navy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 12px 28px rgba(15, 38, 78, 0.38);
+}
+
+.glass-panel {
+  background: rgba(252, 251, 248, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(199, 160, 75, 0.25);
+  border-radius: var(--radius-lg);
+}
+
+.glass-dark {
+  background: var(--color-navy-primary);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(199, 160, 75, 0.3);
+  color: var(--color-porcelain);
+}
+
+/* Unified Luxury Liquid Glass & Architectural Stone System (Matching Small Cards & StatsBar: #FFFFFF -> #FAF6EE -> #F3EACF) */
+.liquid-glass {
+  background: linear-gradient(135deg,
+      #FFFFFF 0%,
+      #FAF6EE 50%,
+      #F3EACF 100%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(212, 175, 55, 0.40);
+  box-shadow:
+    0 14px 40px 0 rgba(7, 22, 46, 0.07),
+    0 2px 10px 0 rgba(199, 160, 75, 0.12),
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 2px 0 rgba(180, 160, 140, 0.10);
+  border-radius: var(--radius-lg);
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass:hover {
+  background: linear-gradient(135deg,
+      #FFFFFF 0%,
+      #FAF6EE 40%,
+      #EFE3C3 100%);
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow:
+    0 20px 50px 0 rgba(7, 22, 46, 0.10),
+    0 6px 20px 0 rgba(199, 160, 75, 0.20),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+}
+
+.liquid-glass-card {
+  background: linear-gradient(135deg,
+      #FFFFFF 0%,
+      #F2F7F4 35%,
+      #FAF6EE 70%,
+      #F4EDE0 100%);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(212, 175, 55, 0.28);
+  box-shadow:
+    0 12px 32px rgba(14, 73, 62, 0.08),
+    0 4px 16px rgba(199, 160, 75, 0.10),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 2px rgba(14, 73, 62, 0.04);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-card:hover {
+  background: linear-gradient(135deg,
+      #FFFFFF 0%,
+      #EBF4EF 35%,
+      #F8F2E4 70%,
+      #EFE4D2 100%);
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow:
+    0 18px 45px rgba(14, 73, 62, 0.12),
+    0 6px 22px rgba(199, 160, 75, 0.18),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.95);
+}
+
+/* Hero Mobile Unified Gradient Background (transparent on desktop where landscape image is rendered) */
+.hero-mobile-bg {
+  background: linear-gradient(135deg,
+      #FFFFFF 0%,
+      #F2F7F4 35%,
+      #FAF6EE 70%,
+      #F4EDE0 100%);
+}
+
+@media (min-width: 768px) {
+  .hero-mobile-bg {
+    background: transparent;
+  }
+}
+
+/* Liquid Glass Buttons & Web UI System Action Buttons */
+.liquid-glass-btn {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(251, 249, 242, 0.85) 100%);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid var(--color-emerald);
+  box-shadow:
+    0 4px 15px rgba(14, 73, 62, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  color: var(--color-graphite);
+  border-radius: var(--radius-control);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-btn:hover {
+  background: var(--color-emerald-tint);
+  border-color: var(--color-emerald);
+  box-shadow:
+    0 8px 25px rgba(14, 73, 62, 0.14),
+    0 2px 10px rgba(234, 217, 163, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+.liquid-glass-btn-navy {
+  background: linear-gradient(135deg,
+      #0E493E 0%,
+      #08332B 100%);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(234, 217, 163, 0.55);
+  box-shadow:
+    0 8px 24px rgba(14, 73, 62, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: var(--radius-control);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-btn-navy:hover {
+  background: linear-gradient(135deg,
+      #135A4D 0%,
+      #0E493E 100%);
+  border-color: rgba(234, 217, 163, 0.85);
+  box-shadow:
+    0 12px 30px rgba(14, 73, 62, 0.45),
+    0 4px 15px rgba(234, 217, 163, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Brand UI System Direct Action Buttons */
+.btn-primary-action {
+  background-color: var(--color-emerald);
+  color: #ffffff;
+  border-radius: var(--radius-control);
+  font-weight: 700;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(14, 73, 62, 0.25);
+}
+
+.btn-primary-action:hover {
+  background-color: #0A372F;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(14, 73, 62, 0.35);
+}
+
+.btn-secondary-action {
+  background-color: #ffffff;
+  color: var(--color-emerald);
+  border: 1.5px solid var(--color-emerald);
+  border-radius: var(--radius-control);
+  font-weight: 700;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary-action:hover {
+  background-color: var(--color-emerald-tint);
+  transform: translateY(-2px);
+}
+
+.btn-gold-action {
+  background-color: var(--color-gold-primary);
+  color: var(--color-graphite);
+  border-radius: var(--radius-control);
+  font-weight: 700;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(234, 217, 163, 0.35);
+}
+
+.btn-gold-action:hover {
+  background-color: #DFCE94;
+  transform: translateY(-2px);
+}
+
+.skeuo-parchment {
+  background: linear-gradient(135deg, #FAF6EE 0%, #F5EEDC 100%);
+  border: 2px solid #D4AF37;
+  box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.15), 0 15px 35px rgba(4, 13, 29, 0.15);
+  position: relative;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F4DC8C 0%, #D4AF37 50%, #997519 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FCFBF8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C7A04B;
+  border-radius: 4px;
+}
+
+/* Continuous Orbiting & Floating Keyframes around Quran Artwork */
+@keyframes float-orbit-1 {
+
+  0%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(-14px, -18px) rotate(-2deg);
+  }
+
+  50% {
+    transform: translate(-22px, 8px) rotate(2deg);
+  }
+
+  75% {
+    transform: translate(-8px, -10px) rotate(-1deg);
+  }
+}
+
+@keyframes float-orbit-2 {
+
+  0%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translate(-20px, 14px) rotate(2.5deg);
+  }
+
+  66% {
+    transform: translate(-10px, -18px) rotate(-2deg);
+  }
+}
+
+@keyframes float-orbit-3 {
+
+  0%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(-18px, -14px) rotate(-2.5deg);
+  }
+
+  80% {
+    transform: translate(-8px, 12px) rotate(1.5deg);
+  }
+}
+
+.animate-orbit-1 {
+  animation: float-orbit-1 9s ease-in-out infinite;
+}
+
+.animate-orbit-2 {
+  animation: float-orbit-2 11s ease-in-out infinite;
+}
+
+.animate-orbit-3 {
+  animation: float-orbit-3 10s ease-in-out infinite;
+}
+
+/* Smooth Floating Quran Animation */
+@keyframes float-quran-gentle {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(1.2deg);
+  }
+}
+
+.animate-float-quran {
+  animation: float-quran-gentle 4.5s ease-in-out infinite;
+}
+
+/* Luxury Shimmer & Gold Glow Utilities */
+@keyframes gold-shimmer-sweep {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+
+  100% {
+    transform: translateX(250%) rotate(25deg);
+  }
+}
+
+.shimmer-gold-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-gold-sweep::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      rgba(230, 199, 106, 0.45),
+      transparent);
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+.shimmer-gold-sweep:hover::after {
+  animation: gold-shimmer-sweep 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pulse-gold-ring {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.45);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(212, 175, 55, 0);
+  }
+}
+
+.pulse-gold-button {
+  animation: pulse-gold-ring 2.8s infinite;
+}
+
+.gold-gradient-glow {
+  background: linear-gradient(135deg, #8C6219 0%, #BA8A2D 45%, #734D0C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.95)) drop-shadow(0 1.5px 3px rgba(115, 77, 12, 0.28));
+}
+
+/* Centralized CSS Variable Utility Classes for Components */
+.layout-page-px {
+  padding-left: var(--page-px);
+  padding-right: var(--page-px);
+}
+
+.hero-section-py {
+  padding-top: var(--hero-py);
+  padding-bottom: var(--hero-py);
+}
+
+.hero-main-grid-var {
+  gap: var(--hero-grid-gap);
+}
+
+.hero-big-card-padding {
+  padding: var(--hero-card-p);
+}
+
+.hero-text-flow-gap {
+  gap: var(--hero-card-gap);
+}
+
+.hero-headline-var {
+  font-size: var(--hero-title-size);
+  line-height: 1.08;
+}
+
+.hero-subtitle-var {
+  font-size: var(--hero-subtitle-size);
+  max-width: var(--hero-subtitle-max-w);
+}
+
+.hero-btn-font-var {
+  font-size: var(--hero-btn-font-size);
+}
+
+.hero-3d-stack-dimensions {
+  width: var(--hero-3d-stack-w);
+  height: var(--hero-3d-stack-h);
+}
+
+.hero-quran-stand-dimensions {
+  max-width: var(--hero-quran-max-w);
+  max-height: var(--hero-quran-max-h);
+}
+
+.sidebar-cards-gap {
+  gap: var(--sidebar-gap);
+}
+
+.sidebar-card-p {
+  padding: var(--sidebar-card-p);
+}
+
+.stats-bar-p {
+  padding: var(--stats-container-p);
+}
+
+.stats-icon-box {
+  width: var(--stats-icon-size);
+  height: var(--stats-icon-size);
+}
+
+.stats-number-var {
+  font-size: var(--stats-number-size);
+}
+
+.stats-label-var {
+  font-size: var(--stats-label-size);
+}
+
+/* Centralized Courses Page Utility Classes */
+.courses-hero-container {
+  padding-top: var(--courses-hero-py);
+  padding-bottom: var(--courses-hero-py);
+  min-height: 85vh;
+}
+
+@media (min-width: 640px) {
+  .courses-hero-container {
+    min-height: 90vh;
+  }
+}
+
+.courses-hero-glass {
+  background: linear-gradient(145deg,
+      rgba(246, 239, 232, 0.92) 0%,
+      rgba(239, 232, 223, 0.88) 50%,
+      rgba(229, 221, 211, 0.85) 100%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 10px 30px -5px rgba(11, 27, 51, 0.04),
+    0 2px 8px 0 rgba(199, 160, 75, 0.10),
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+}
+
+.courses-filter-card {
+  background: linear-gradient(135deg,
+      #FFFFFF 0%,
+      #FAF9F5 50%,
+      #F4EFE6 100%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 10px 30px rgba(14, 73, 62, 0.06),
+    0 2px 10px rgba(212, 175, 55, 0.12),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 2px rgba(180, 160, 140, 0.08);
+  border-radius: 24px;
+}
+
+.courses-search-bar {
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  box-shadow: inset 0 1px 3px rgba(14, 73, 62, 0.03), 0 2px 8px rgba(14, 73, 62, 0.03);
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.courses-search-bar:focus-within {
+  border-color: #D4AF37;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.22), 0 4px 16px rgba(14, 73, 62, 0.08);
+  background: #FFFFFF;
+}
+
+.courses-chip-btn {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--color-emerald);
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.courses-chip-btn:hover {
+  background: #FAF5E6;
+  border-color: rgba(212, 175, 55, 0.75);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(14, 73, 62, 0.06);
+}
+
+.courses-chip-btn-active {
+  background: linear-gradient(135deg, #FDE68A 0%, #E5BE50 30%, #D4AF37 60%, #AA7A1E 100%) !important;
+  border: 1px solid #FFEAA7 !important;
+  color: #07261F !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.38), inset 0 1px 1px rgba(255, 255, 255, 0.7) !important;
+}
+
+.courses-faq-dark {
+  background: radial-gradient(circle at 50% 0%, #0E493E 0%, #08332B 60%, #031814 100%);
+  border: 1px solid rgba(212, 175, 55, 0.42);
+  border-radius: 28px;
+  box-shadow:
+    0 16px 40px -8px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(212, 175, 55, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+.course-card-liquid {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FAF9F5 55%, #F4EFE6 100%);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: var(--course-card-radius);
+  box-shadow:
+    0 10px 28px rgba(14, 73, 62, 0.07),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 2px rgba(180, 160, 140, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.course-card-liquid:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #FFFFFF 0%, #FAF9F5 40%, #F5EEDC 100%);
+  border-color: rgba(212, 175, 55, 0.85);
+  box-shadow:
+    0 20px 48px rgba(14, 73, 62, 0.12),
+    0 4px 18px rgba(212, 175, 55, 0.28),
+    inset 0 1.5px 2px rgba(255, 255, 255, 1);
+}
+
+.course-card-img-height {
+  height: var(--course-card-img-h);
+}
+
+.course-card-padding {
+  padding: var(--course-card-p);
+}
+
+.courses-grid-gap-var {
+  gap: var(--courses-grid-gap);
+}
+
+.course-modal-panel {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FAF9F5 50%, #F4EFE6 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.55);
+  box-shadow:
+    0 25px 70px rgba(7, 22, 46, 0.35),
+    0 0 40px rgba(212, 175, 55, 0.15),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+}
+
+/* Continuous Infinite Payment Marquee */
+@keyframes marquee-infinite {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  animation: marquee-infinite 38s linear infinite;
+}
+
+.animate-marquee-infinite:hover {
+  animation-play-state: paused;
+}
+
+/* Reduced Motion Accessibility Support */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .pulse-gold-button,
+  .animate-pulse,
+  .animate-marquee-infinite,
+  .shimmer-gold-sweep::after {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   3D Layered Hero Scene Positioning (Explicit Breakpoints for Scholar & Laptop)
+   ========================================================================== */
+.hero-scene-scholar {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  bottom: -4px;
+  right: 12%;
+  width: 195px;
+  height: 245px;
+}
+
+@media (min-width: 640px) {
+  .hero-scene-scholar {
+    bottom: -5px;
+    right: 16%;
+    width: 250px;
+    height: 310px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-scene-scholar {
+    bottom: -6px;
+    right: 18%;
+    width: 300px;
+    height: 380px;
+  }
+}
+
+/* 1400px and 1500px screens (1360px to 1599px) */
+@media (min-width: 1360px) and (max-width: 1599px) {
+  .hero-scene-scholar {
+    right: 0% !important;
+    width: 295px !important;
+    height: 375px !important;
+  }
+}
+
+/* 1600px+ large screens */
+@media (min-width: 1600px) {
+  .hero-scene-scholar {
+    right: 21% !important;
+    width: 325px !important;
+    height: 410px !important;
+  }
+}
+
+.hero-scene-desk {
+  position: absolute;
+  z-index: 20;
+  bottom: -20px;
+  width: 440px;
+  height: 160px;
+}
+
+@media (min-width: 640px) {
+  .hero-scene-desk {
+    bottom: -28px;
+    width: 580px;
+    height: 210px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-scene-desk {
+    bottom: -36px;
+    width: 760px;
+    height: 270px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero-scene-desk {
+    bottom: -48px !important;
+    width: 840px !important;
+    height: 285px !important;
+  }
+}
+
+.hero-scene-laptop {
+  position: absolute;
+  z-index: 30;
+  bottom: 96px;
+  left: 14%;
+  width: 82px;
+  height: 56px;
+}
+
+@media (min-width: 640px) {
+  .hero-scene-laptop {
+    bottom: 135px;
+    left: 18%;
+    width: 110px;
+    height: 75px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-scene-laptop {
+    bottom: 160px;
+    left: 20%;
+    width: 135px;
+    height: 92px;
+  }
+}
+
+/* 1400px and 1500px screens (1360px to 1599px) */
+@media (min-width: 1360px) and (max-width: 1599px) {
+  .hero-scene-laptop {
+    left: 0% !important;
+    bottom: 172px !important;
+  }
+}
+
+/* 1600px+ large screens */
+@media (min-width: 1600px) {
+  .hero-scene-laptop {
+    left: 24% !important;
+    bottom: 170px !important;
+  }
+}
+
+/* ==========================================================================
+   3D Revolving Auto-Gallery System (Matching Official User Template)
+   ========================================================================== */
+
+.Reboot-Auto-Gallery-Parent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 440px;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  z-index: 15;
+  margin: 14px auto 0 auto;
+  padding: 0;
+  background: transparent;
+  border-radius: 0px;
+  overflow: visible;
+  box-shadow: none;
+}
+
+.Reboot-Auto-Gallery {
+  position: relative;
+  width: 148px;
+  height: 224px;
+  transform-style: preserve-3d;
+  transform: rotateX(-1deg);
+  animation: AutoGalleryReboot 42s infinite linear;
+}
+
+.Reboot-Auto-Gallery .elementor-widget-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 148px;
+  height: 224px;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px -4px rgba(14, 73, 62, 0.28), 0 4px 10px -3px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  -webkit-box-reflect: below 8px linear-gradient(to bottom, transparent 65%, rgba(0, 0, 0, 0.14));
+  cursor: pointer;
+  border: 1.5px solid rgba(234, 217, 163, 0.4);
+  background: #0E493E;
+}
+
+/* NO transform: scale() on the 3D container to prevent matrix disruption! */
+.Reboot-Auto-Gallery .elementor-widget-image:hover {
+  z-index: 50;
+  border-color: var(--color-emerald);
+  box-shadow: 0 16px 32px -5px rgba(14, 73, 62, 0.25), 0 0 16px rgba(14, 73, 62, 0.2);
+}
+
+/* Inner card scaling for smooth, stable hover */
+.Reboot-Auto-Gallery .elementor-widget-image .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.Reboot-Auto-Gallery .elementor-widget-image:hover .card-inner {
+  transform: scale(1.04);
+}
+
+.Reboot-Auto-Gallery .elementor-widget-image:active .card-inner {
+  transform: scale(0.97);
+}
+
+.Reboot-Auto-Gallery .elementor-widget-image .card-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease, transform 0.4s ease;
+}
+
+.Reboot-Auto-Gallery .elementor-widget-image:hover .card-thumb img {
+  filter: brightness(1.06) contrast(1.04);
+  transform: scale(1.06);
+}
+
+@keyframes AutoGalleryReboot {
+  from {
+    transform: rotateX(-1deg) rotateY(0deg);
+  }
+
+  to {
+    transform: rotateX(-1deg) rotateY(360deg);
+  }
+}
+
+/* Pause rotation smoothly on hover */
+.Reboot-Auto-Gallery:hover {
+  animation-play-state: paused;
+}
+
+/* Interactive Card Tooltip */
+.image-tooltip {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(14, 73, 62, 0.95);
+  border: 1px solid rgba(234, 217, 163, 0.5);
+  color: #FFFFFF;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 25;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.Reboot-Auto-Gallery .elementor-widget-image:hover .image-tooltip {
+  opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .hero-carousel-container {
+    top: 5vh;
+  }
+}
+
+/* ================ Responsive Breakpoints for Refined Card Sizing ================ */
+
+/* Ultra-Wide 2560px+ */
+@media (min-width: 2560px) {
+  .Reboot-Auto-Gallery-Parent {
+    perspective: 1400px;
+    min-height: 480px;
+  }
+
+  .Reboot-Auto-Gallery,
+  .Reboot-Auto-Gallery .elementor-widget-image {
+    width: 170px;
+    height: 255px;
+  }
+}
+
+/* Large Desktop 1920px - 2559px */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .Reboot-Auto-Gallery-Parent {
+    perspective: 1250px;
+    min-height: 450px;
+  }
+
+  .Reboot-Auto-Gallery,
+  .Reboot-Auto-Gallery .elementor-widget-image {
+    width: 156px;
+    height: 234px;
+  }
+}
+
+/* Large Desktop 1600px - 1919px: Preserves large luxury proportions */
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .Reboot-Auto-Gallery-Parent {
+    perspective: 1120px;
+    min-height: 430px;
+  }
+
+  .Reboot-Auto-Gallery,
+  .Reboot-Auto-Gallery .elementor-widget-image {
+    width: 146px;
+    height: 220px;
+  }
+}
+
+/* Mid-Large Desktop 1500px - 1599px: Dynamically scaled down to maintain harmonious spacing without overlap */
+@media (min-width: 1500px) and (max-width: 1599px) {
+  .Reboot-Auto-Gallery-Parent {
+    perspective: 1040px;
+    min-height: 400px;
+  }
+
+  .Reboot-Auto-Gallery,
+  .Reboot-Auto-Gallery .elementor-widget-image {
+    width: 132px;
+    height: 198px;
+  }
+}
+
+/* Standard Desktop 1400px - 1499px: Tailored dynamic scaling ensuring wide clearance between zones */
+@media (min-width: 1400px) and (max-width: 1499px) {
+  .Reboot-Auto-Gallery-Parent {
+    perspective: 980px;
+    min-height: 380px;
+  }
+
+  .Reboot-Auto-Gallery,
+  .Reboot-Auto-Gallery .elementor-widget-image {
+    width: 122px;
+    height: 183px;
+  }
+}
+
+/* Compact Desktop / Laptop 1200px - 1399px */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .Reboot-Auto-Gallery-Parent {
+    perspective: 920px;
+    min-height: 360px;
+  }
+
+  .Reboot-Auto-Gallery,
+  .Reboot-Auto-Gallery .elementor-widget-image {
+    width: 114px;
+    height: 172px;
+  }
+}
+
+/* Small Desktop / Large Tablet Landscape 992px - 1199px */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .Reboot-Auto-Gallery-Parent {
+    perspective: 850px;
+    min-height: 345px;
+  }
+
+  .Reboot-Auto-Gallery,
+  .Reboot-Auto-Gallery .elementor-widget-image {
+    width: 108px;
+    height: 164px;
+  }
+}
+
+/* Large Tablet 768px - 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .Reboot-Auto-Gallery-Parent {
+    perspective: 750px;
+    min-height: 330px;
+  }
+
+  .Reboot-Auto-Gallery,
+  .Reboot-Auto-Gallery .elementor-widget-image {
+    width: 102px;
+    height: 156px;
+  }
+
+  .image-tooltip {
+    font-size: 10px;
+    padding: 4px 10px;
+    bottom: -32px;
+  }
+}
+
+/* Mobile & Small Tablet < 768px */
+@media (max-width: 767px) {
+  .Reboot-Auto-Gallery-Parent {
+    perspective: 550px;
+    min-height: 215px;
+    margin: 0px auto 0 auto;
+  }
+
+  .Reboot-Auto-Gallery,
+  .Reboot-Auto-Gallery .elementor-widget-image {
+    width: 96px;
+    height: 148px;
+    border-radius: 12px;
+  }
+
+  .image-tooltip {
+    font-size: 9px;
+    padding: 3px 8px;
+    bottom: -26px;
+  }
+}
+
+/* Extra-small mobile screens (360px - 435px covering 365px, 390px, 403px) */
+@media (max-width: 435px) {
+  .Reboot-Auto-Gallery-Parent {
+    perspective: 480px;
+    min-height: 195px;
+    margin: 0px auto 0 auto;
+  }
+
+  .Reboot-Auto-Gallery,
+  .Reboot-Auto-Gallery .elementor-widget-image {
+    width: 93px;
+    height: 138px;
+    border-radius: 10px;
+  }
+
+  .Reboot-Auto-Gallery .elementor-widget-image .card-inner h4 {
+    font-size: 8.5px !important;
+    line-height: 1.15 !important;
+  }
+
+  .Reboot-Auto-Gallery .elementor-widget-image .card-inner p {
+    font-size: 7px !important;
+  }
+
+  .Reboot-Auto-Gallery .elementor-widget-image .badge-tag {
+    white-space: nowrap !important;
+    line-height: 1 !important;
+  }
+}
