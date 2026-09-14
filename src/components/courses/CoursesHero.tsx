@@ -46,7 +46,7 @@ export const CoursesHero: React.FC<CoursesHeroProps> = ({
         <div className="rounded-[28px] border border-emerald/20 shadow-[0_20px_50px_rgba(14,73,62,0.07),inset_0_1.5px_2px_rgba(255,255,255,0.85),0_0_0_1px_rgba(255,255,255,0.4)] hero-big-card-padding overflow-hidden flex flex-col justify-between relative group min-h-0 md:min-h-0 h-full bg-[#FAF9F5]">
           {/* Background Image Layer (Landscape Arch v2 tailored for wide screens) */}
           <Image
-            src="/images/backgrounds/hero-card-bg-v2.png"
+            src="/images/backgrounds/hero-card-bg-v2.webp"
             alt="Furqan Learn Hero Background Desktop"
             fill
             priority

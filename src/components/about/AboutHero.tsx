@@ -86,7 +86,7 @@ export const AboutHero: React.FC<AboutHeroProps> = ({ onOpenBooking }) => {
         <div className="royal-card-light specular-rim-gold rounded-[28px] border border-gold-primary/35 shadow-xl hero-big-card-padding overflow-hidden flex flex-col justify-between relative group min-h-[540px] sm:min-h-[600px] lg:min-h-[660px] 2xl:min-h-[720px]">
           {/* Background Image Layer (Approved Mosque Arch Signature) */}
           <Image
-            src="/images/backgrounds/hero-card-bg-v2.png"
+            src="/images/backgrounds/hero-card-bg-v2.webp"
             alt="Furqan Learn About Hero Background"
             fill
             priority

@@ -31,7 +31,7 @@ export const PricingHero: React.FC<PricingHeroProps> = ({ onOpenBooking }) => {
       <div className="royal-card-light specular-rim-gold hero-big-card-padding overflow-hidden flex flex-col justify-center relative group h-auto lg:h-[calc(100vh-120px)] min-h-[580px] sm:min-h-[650px] lg:min-h-[680px] lg:max-h-[840px] 2xl:h-[calc(100vh-140px)] 2xl:min-h-[740px] 2xl:max-h-[900px] w-full border border-gold-primary/35 shadow-xl rounded-[28px]">
         {/* Background Image Layer (Approved Mosque Arch Official Signature) */}
         <Image
-          src="/images/backgrounds/hero-card-bg-v2.png"
+          src="/images/backgrounds/hero-card-bg-v2.webp"
           alt="Royal Mosque Arch Background"
           fill
           priority

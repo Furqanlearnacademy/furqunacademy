@@ -184,7 +184,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
         {/* Desktop Background Image (Landscape arch tailored for wide screens) */}
         <Image
-          src="/images/backgrounds/hero-card-bg-v2.png"
+          src="/images/backgrounds/hero-card-bg-v2.webp"
           alt="Furqan Learn Hero Background Desktop"
           fill
           priority
