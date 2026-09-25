@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-2.5 pt-2">
               {/* WhatsApp */}
               <a
-                href="https://wa.me/201063204740"
+                href="https://wa.me/201116190439"
                 target="_blank"
                 rel="noreferrer"
                 className="w-8 h-8 rounded-lg bg-navy-royal/60 border border-gold-primary/30 text-gold-light hover:text-[#25D366] hover:border-[#25D366] flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -132,12 +132,12 @@ export const Footer: React.FC = () => {
               </div>
               <div>
                 <a
-                  href="tel:+201063204740"
+                  href="tel:+201116190439"
                   className="inline-flex items-center gap-2 hover:text-gold-light transition-colors group cursor-pointer"
                   title="Call Academic Hotline"
                 >
                   <Phone className="w-3.5 h-3.5 text-gold-primary group-hover:scale-110 transition-transform shrink-0" />
-                  <span dir="ltr">+20 106 320 4740</span>
+                  <span dir="ltr">+20 111 619 0439</span>
                 </a>
               </div>
               <div className="flex items-center gap-2 text-gray-400">

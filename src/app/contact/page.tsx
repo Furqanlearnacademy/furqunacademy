@@ -189,7 +189,7 @@ export default function ContactPage() {
 
               {/* WhatsApp VIP Direct Chat Card */}
               <a
-                href="https://wa.me/201063204740"
+                href="https://wa.me/201116190439"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block p-6 rounded-3xl bg-gradient-to-br from-[#EBF7F0] via-[#E2F4EB] to-[#D4EFE0] border border-emerald-500/40 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
@@ -247,7 +247,7 @@ export default function ContactPage() {
 
                   {/* Phone Support */}
                   <a
-                    href="tel:+201063204740"
+                    href="tel:+201116190439"
                     className="flex items-start gap-3.5 group cursor-pointer p-2 -m-2 rounded-xl hover:bg-gold-primary/5 transition-colors"
                   >
                     <div className="w-10 h-10 rounded-xl royal-card-light border border-gold-primary/35 text-gold-dark flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 group-hover:border-gold-primary transition-all">
@@ -258,7 +258,7 @@ export default function ContactPage() {
                         Global Academic &amp; WhatsApp Hotline
                       </h4>
                       <p className="text-xs sm:text-sm font-bold text-graphite/90 group-hover:text-gold-dark transition-colors" dir="ltr">
-                        +20 106 320 4740
+                        +20 111 619 0439
                       </p>
                       <p className="text-[11px] text-graphite/60">
                         Available Mon-Sun (24 Hours)
