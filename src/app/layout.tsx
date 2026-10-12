@@ -115,9 +115,9 @@ const jsonLd = {
     "Premier online Quran, Arabic & Islamic Studies academy with certified Azhari scholars. 1-on-1 classes, AI Tajweed Coach, and accredited Ijazah certificates.",
   "sameAs": [
     "https://wa.me/201116190439",
-    "https://www.facebook.com/furqanlearn",
-    "https://www.instagram.com/furqanlearn/",
-    "https://www.youtube.com/@furqanlearn"
+    "https://www.facebook.com/profile.php?id=61595019824799",
+    "https://www.instagram.com/furqanlearnacademy/",
+    "https://www.youtube.com/channel/UC9JR_zmMdBpxNddzszkXapA"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
